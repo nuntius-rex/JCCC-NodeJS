@@ -1,0 +1,28 @@
+
+npm init - initialize application; create package.json
+
+npm install
+
+  - install an app from NPM as a "node module" if an app is defined
+    npm install 4_npm_test_dg
+
+  -if a name is not given, it install what is defined in the package.json
+
+
+npm docs - will get you to the npm page:
+
+  npm docs 4_npm_test_dg
+  npm docs nodemon
+
+npm start - run the start script in package.json
+
+  "scripts": {
+    "start": "node index.js"
+  },
+
+npm publish - publish to npmjs.com
+
+npm version patch - update when changes are made to versioning
+
+
+npm help npm

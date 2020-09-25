@@ -1,0 +1,19 @@
+{
+  "name": "13_mysql",
+  "version": "1.0.0",
+  "description": "Learn to use MySQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "MySQL"
+  ],
+  "author": "Dan Guinn",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4"
+  }
+}

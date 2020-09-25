@@ -1,0 +1,21 @@
+{
+  "name": "9_npm",
+  "version": "1.0.0",
+  "description": "How to use npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "Dan Guinn",
+  "license": "ISC",
+  "dependencies": {
+    "4_npm_test_dg": "^1.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

@@ -1,0 +1,54 @@
+
+Publishing on Github and NPMJS.COM:
+
+=====GITHUB====
+
+1.) create repo in github
+2.) create directory of repo name locally
+3.) run:
+	git init 
+4.) Run the following. This will fetch all the meta objects, including the branch
+
+	git remote add origin --fetch https://github.com/nuntius-rex/JCCC-HTML-CSS-Fundamentals.git
+5) Checkout the master branch:
+
+	git checkout master
+
+6) Open Atom and point to repo. Atom will then function on the branch
+
+Use Atom Git to commit changes and push to github.
+
+===NPMJS====
+
+1.) First time, just run npm publish (https://docs.npmjs.com/cli/publish):
+
+	npm publish
+
+2.) Thereafter, when you publish, run version updates :
+
+Explanation:
+https://docs.npmjs.com/updating-your-published-package-version-number
+
+Notes on Semantic Versioning:
+https://docs.npmjs.com/about-semantic-versioning
+
+npm version <update_type>
+npm version patch - changes the version number 1.0.0 to 1.0.1
+npm version minor - changes the version number 1.0.0 to 1.1.0
+npm version major - changes the version number 1.0.0 to 2.0.0
+
+Example command:
+
+	npm version patch -m "Upgrade to something, for reasons"
+
+Additional Notes:
+
+
+Package.json info:
+https://docs.npmjs.com/files/package.json
+
+This listing will display the github references on npmjs.com repo:
+"repository": {
+    "type": "github",
+    "url": "https://github.com/nuntius-rex/node-mvc-create.git"
+  }

@@ -1,0 +1,27 @@
+{
+  "name": "18_mvc",
+  "version": "1.0.0",
+  "description": "MVC app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.js"
+  },
+  "keywords": [
+    "mvc"
+  ],
+  "author": "Dan Guinn",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-es6-template-engine": "^2.2.3"
+  },
+  "devDependencies": {
+    "mvccreate": "*",
+    "nodemon": "^2.0.4"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title id="pgTitle">My Web Page</title>
+    <style media="screen">
+      .infoBox{
+        width:90%;
+        height:100px;
+        border:solid 1px;
+        padding:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="pgHeading">My Web Page</h1>
+
+    <div class='infoBox' id="app_info">
+      <!-- Dynamic Content -->
+    </div>
+
+    <div class='infoBox' id="stats">
+      <!-- Dynamic Content -->
+    </div>
+
+    <br>
+    <button type="button" name="button" id="loadAppBTN">Load App</button>
+
+    <script type="text/javascript">
+      //AJAX Script
+      var xhr=new XMLHttpRequest();
+      //console.log(xhr);
+      var loadAppBTN = document.getElementById('loadAppBTN');
+      loadAppBTN.addEventListener("click",function(e){
+        //console.log("You clicked?");
+        xhr.onreadystatechange=function(){
+          console.log("readyState:"+this.readyState);
+          console.log("status:"+this.status);
+          if(this.readyState==4 && this.status==200){
+
+            console.log(this.responseText);
+            let appObj=JSON.parse(this.responseText);
+            console.log(appObj);
+            /*
+            console.log("Finished!!!");
+            console.log(this.responseText);
+            let appObj=JSON.parse(this.responseText)[0]; //Note: is an array, first element
+            console.log(appObj);
+
+            let appResult=`
+              <strong>App Name:</strong> ${appObj.app_name}<br>
+              <strong>Page:</strong> ${appObj.page}<br>
+              <strong>Title:</strong> ${appObj.title}<br>
+              <strong>Version:</strong> ${appObj.version}<br>
+            `;
+            document.getElementById("app_info").innerHTML=appResult;
+
+            document.getElementById('pgTitle').innerHTML=appObj.app_name+" v"+appObj.version;
+            document.getElementById('pgHeading').innerHTML=appObj.app_name+" v"+appObj.version;
+
+            let statObj=JSON.parse(this.responseText)[1];
+            let statResult=`
+              <strong>Page Views:</strong> ${statObj.page_views}<br>
+              <strong>Likes:</strong> ${statObj.likes}<br>
+            `;
+            document.getElementById('stats').innerHTML=statResult;
+            */
+          }
+        }
+        xhr.open("GET","http://localhost:3000/api",true);
+        xhr.send();
+
+      });
+
+    </script>
+
+
+  </body>
+</html>

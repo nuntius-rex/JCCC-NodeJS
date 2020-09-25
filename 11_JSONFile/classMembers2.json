@@ -1,0 +1,12 @@
+[
+    {
+      "first_name":"Joe",
+      "last_name":"Smoe",
+      "teacher":"false"
+    },
+    {
+      "first_name":"Andre",
+      "last_name":"The Giant",
+      "teacher":"false"
+    }
+]

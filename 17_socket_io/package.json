@@ -1,0 +1,19 @@
+{
+  "name": "15_socket_io",
+  "version": "1.0.0",
+  "description": "socket io demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "socketio"
+  ],
+  "author": "Dan Guinn",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0"
+  }
+}

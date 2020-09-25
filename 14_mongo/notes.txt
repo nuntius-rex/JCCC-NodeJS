@@ -1,0 +1,67 @@
+Install instruction docs:
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
+
+MongDB Binaries:
+
+1.) Download and install -- GET the Latest Signed 4.0 msi:
+(NOTE: Before 4.0 the service config is not available!!!)
+win32/mongodb-win32-x86_64-2008plus-ssl-v4.0-latest-signed.msi
+
+- Windows (64 bits) : https://www.mongodb.org/dl/win32/x86_64-2008plus-ssl
+
+- Windows (32 bits) : https://www.mongodb.org/dl/win32/i386
+- MacOS : https://www.mongodb.org/dl/osx
+- Linux (64 bits): https://www.mongodb.org/dl/linux/x86_64
+- Linux (32 bits): https://www.mongodb.org/dl/linux/i386
+
+2.) Create default directories on the C drive:
+md "\data\db" "\data\log"
+
+3.) TEST: Invoke the db (note mongod):
+"C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
+
+4.) TEST: Access the db with the mongo client:
+"C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+
+5.) Run the db as service (must run as admin):
+- In the search type "cmd" then right click and select "Run as Administrator":
+net start MongoDB
+
+6.) TEST: Access the db with the mongo client:
+"C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+
+######- Note the extensive features of the mongo shell:
+https://docs.mongodb.com/manual/mongo/
+
+//MONGO COMMANDS:
+db (shows what db connected to)
+show dbs (shows the datbase list)
+--List databases (note: is Node permission based):
+db.adminCommand( { listDatabases: 1 } )
+
+use mydb
+db.dropDatabase()
+
+
+//================================
+//Usage: from NodeJS
+//================================
+mkdir mongo
+npm install mongodb
+
+var mongo = require('mongodb');
+var MongoClient = require('mongodb').MongoClient;
+
+
+
+
+
+
+
+
+
+Windows: Set PATH:
+
+set PATH=%path%;C:\Program Files\MongoDB\Server\3.4\bin
+
+mongodb --dbpath

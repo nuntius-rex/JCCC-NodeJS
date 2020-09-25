@@ -1,0 +1,9 @@
+/*
+General file system interactions use CRUD:
+
+C - Create
+R - Read
+U - Update
+D - Delete
+
+*/

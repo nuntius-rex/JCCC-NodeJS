@@ -1,0 +1,13 @@
+{"config":[
+  {
+    "app_name":"Dan's App",
+    "version":"1.0",
+    "title":"Home",
+    "page":"index.html"
+  },
+  {"stats":[
+    {
+    "page_views":134,
+    "likes":39
+    }
+]}

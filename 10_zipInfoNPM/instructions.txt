@@ -1,0 +1,9 @@
+
+1) npm init
+2) create start/main file: index.js
+3) Install nodemon: npm i nodemon
+4) add start to scripts in package.json:
+  If skipped nodemon: "start": "node index.js"
+  If nodemon: "start": "nodemon index.js"
+5) Install dependency Cities: npm install cities --save
+6) Begin to code using all modules

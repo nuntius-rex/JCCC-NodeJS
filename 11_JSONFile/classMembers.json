@@ -1,0 +1,12 @@
+[
+    {
+      "first_name":"Dan",
+      "last_name":"Guinn",
+      "teacher":"true"
+    },
+    {
+      "first_name":"Ross",
+      "last_name":"Dreeszen",
+      "teacher":"false"
+    }
+]

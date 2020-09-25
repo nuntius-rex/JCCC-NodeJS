@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title id="pgTitle">My Web Page</title>
+    <style media="screen">
+      .infoBox{
+        width:90%;
+        min-height:100px;
+        border:solid 1px;
+        padding:5px;
+      }
+
+      .infoBox th, td{
+        border:solid 1px;
+        padding:3px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1 id="pgHeading">My Web Page</h1>
+
+    <div class='infoBox' id="app_info">
+      <!-- Dynamic Content -->
+    </div>
+
+    <div class='infoBox' id="customers">
+      <!-- Dynamic Content -->
+    </div>
+
+    <br>
+    <button type="button" name="button" id="loadAppBTN">Load App</button>
+
+    <script type="text/javascript">
+      //AJAX Script
+      var xhr=new XMLHttpRequest();
+      //console.log(xhr);
+      var loadAppBTN = document.getElementById('loadAppBTN');
+      loadAppBTN.addEventListener("click",function(e){
+        //console.log("You clicked?");
+        xhr.onreadystatechange=function(){
+          console.log("readyState:"+this.readyState);
+          console.log("status:"+this.status);
+          if(this.readyState==4 && this.status==200){
+            let appObj=JSON.parse(this.responseText);
+            let appConfig=appObj.appConfig;
+            let customers=appObj.dbResults;
+            //console.log(this.responseText);
+            //console.log(appConfig.app_name);
+
+            let appResult=`
+              <strong>App Name:</strong> ${appConfig.app_name}<br>
+              <strong>Page:</strong> ${appConfig.page}<br>
+              <strong>Title:</strong> ${appConfig.title}<br>
+              <strong>Version:</strong> ${appConfig.version}<br>
+            `;
+            document.getElementById("app_info").innerHTML=appResult;
+            document.getElementById('pgTitle').innerHTML=appConfig.app_name+" v"+appConfig.version;
+            document.getElementById('pgHeading').innerHTML=appConfig.app_name+" v"+appConfig.version;
+
+            //console.log(customers);
+            //console.log(customers[0].contactFirstName);
+            let custResults=`
+            <table>
+              <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Customer Name</th>
+                    <th>Contact</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Phone</th>
+                    <th>Credit Limit</th>
+                  </tr>
+              </thead>
+            <tbody>
+            `;
+            for(let i=0; i<customers.length;i++){
+              let cid=customers[i].customerNumber;
+              let firstName=customers[i].contactFirstName;
+              let lastName=customers[i].contactLastName;
+              let company=customers[i].customerName;
+              let city=customers[i].city;
+              let state=customers[i].state;
+              let country=customers[i].country;
+              let phone=customers[i].phone;
+              let soNum=customers[i].salesRepEmployeeNumber;
+              let creditLimit=customers[i].creditLimit;
+              creditLimit=creditLimit.toLocaleString();
+
+              custResults+=`
+                <tr>
+                  <td>${cid}</td>
+                  <td>${company}</td>
+                  <td>${firstName} ${lastName}</td>
+                  <td>${city}</td>
+                  <td>${state}</td>
+                  <td>${phone}</td>
+                  <td>$${creditLimit}</td>
+                </tr>
+              `
+            }//end for
+            custResults+=`
+              </tbody>
+            </table>`;
+
+            console.log(custResults);
+            document.getElementById('customers').innerHTML=custResults;
+
+          }
+        }
+        xhr.open("GET","http://localhost:3000/api",true);
+        xhr.send();
+
+      });
+
+    </script>
+
+
+
+
+
+  </body>
+</html>
