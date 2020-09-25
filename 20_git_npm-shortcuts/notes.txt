@@ -6,10 +6,10 @@ Publishing on Github and NPMJS.COM:
 1.) create repo in github
 2.) create directory of repo name locally
 3.) run:
-	git init 
+	git init
 4.) Run the following. This will fetch all the meta objects, including the branch
 
-	git remote add origin --fetch https://github.com/nuntius-rex/JCCC-HTML-CSS-Fundamentals.git
+	git remote add origin --fetch https://github.com/YOUR_ACCT_NAME/YOUR_REPO.git
 5) Checkout the master branch:
 
 	git checkout master
